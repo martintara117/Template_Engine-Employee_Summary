@@ -90,6 +90,50 @@ function getEmployeeRole() {
     }
   });
 }
+function addManager() {
+  let questions = addEmployeeQ.concat(addManagerQ);
+  inquirer.prompt(questions).then((answers) => {
+    let employee = new Manager(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.officeNumber
+    );
+    employees.push(employee);
+    console.log(`${employee.getRole()} ${employee.getName()} added`);
+    start();
+  });
+}
+
+function addEngineer() {
+  let questions = addEmployeeQ.concat(addEngineerQ);
+  inquirer.prompt(questions).then((answers) => {
+    let employee = new Engineer(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.github
+    );
+    employees.push(employee);
+    console.log(`${employee.getRole()} ${employee.getName()} added`);
+    start();
+  });
+}
+
+function addIntern() {
+  let questions = addEmployeeQ.concat(addInternQ);
+  inquirer.prompt(questions).then((answers) => {
+    let employee = new Intern(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.school
+    );
+    employees.push(employee);
+    console.log(`${employee.getRole()} ${employee.getName()} added`);
+    start();
+  });
+}
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
