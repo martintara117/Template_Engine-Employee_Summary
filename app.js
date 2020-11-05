@@ -134,6 +134,15 @@ function addIntern() {
     start();
   });
 }
+function finish() {
+  let content = render(employees);
+  fs.writeFile(outputPath, content, (err) => {
+    if (err) console.error(err);
+    else console.log("File created in dist folder");
+    console.log("----------");
+    console.log("Thank you for using Employee Viewer");
+  });
+}
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
