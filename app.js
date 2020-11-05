@@ -18,6 +18,28 @@ const addAnotherEmployeeQ = [
     type: "confirm",
   },
 ];
+const addEmployeeRoleQ = [
+  {
+    name: "employeeRole",
+    message: "What's the role for this new employee?",
+    type: "list",
+    choices: ["Manager", "Engineer", "Intern"],
+  },
+];
+const addEmployeeQ = [
+  {
+    name: "name",
+    message: "Employee name:",
+  },
+  {
+    name: "id",
+    message: "Employee id:",
+  },
+  {
+    name: "email",
+    message: "Employee email:",
+  },
+];
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
