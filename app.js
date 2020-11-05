@@ -75,6 +75,22 @@ function start() {
   });
 }
 
+function getEmployeeRole() {
+  inquirer.prompt(addEmployeeRoleQ).then((answers) => {
+    switch (answers.employeeRole) {
+      case "Manager":
+        addManager();
+        break;
+      case "Engineer":
+        addEngineer();
+        break;
+      case "Intern":
+        addIntern();
+        break;
+    }
+  });
+}
+
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
