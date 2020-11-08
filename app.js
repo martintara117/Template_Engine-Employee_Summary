@@ -138,7 +138,7 @@ function finish() {
   let content = render(employees);
   fs.writeFile(outputPath, content, (err) => {
     if (err) console.error(err);
-    else console.log("File created in dist folder");
+    else console.log("File created in output folder");
     console.log("----------");
     console.log("Thank you for using Employee Viewer");
   });
